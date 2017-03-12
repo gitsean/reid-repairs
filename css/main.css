@@ -234,6 +234,7 @@ h1{
 	    margin: 0 auto;
 	}
 }
+
 @media (max-width: 767px){
 	body {
     	background-size:1600px !important;
@@ -254,6 +255,7 @@ h1{
 	}
 
 }
+
 @media (min-width: 1600px){
 	body {
     	background-size:2200px !important;
