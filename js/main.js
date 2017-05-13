@@ -1,26 +1,5 @@
-
-/*MENU*/
-/*Controls the menu slide in and out classes*/
-/*
-over = function(){
-	$("#background").toggleClass("move");
-	$("#content").toggleClass("move");
-	$("#branding").toggleClass("move");
-	$("#branding").toggleClass("static");
-	$("#background").toggleClass("static");
-	$("#content").toggleClass("static");
-	$("#navbar").toggleClass("menu");	
-}
-*/
-
 $( document ).ready(function() {
-    var str = $('#subtext').text();
-	str = str.toLowerCase().replace(/\b[A-Z]/g, function(letter) {
-	    return letter.toLowerCase();
-	});
-	card();
 
-	
 	setHeights();
 
 });
@@ -45,30 +24,6 @@ var pathname = window.location.pathname;
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-
-
-
-
-
-
-var card = function(id){
-	if(!id){
-		$('.front').show();
-		$('.back').hide();
-	} else {
-		//if this, then someone clicked... so we'll have to toggle the show/hide.
-		//Do nothing for now - will engage when live
-		if($('#' + id).find('.front').is(":visible")){
-			$('#' + id).find('.front').hide();
-			$('#' + id).find('.back').show();
-		} else {
-			$('#' + id).find('.front').show();
-			$('#' + id).find('.back').hide();
-		}
-
-	}
-}
-
 var setHeights = function(){
 
 	$('body').css('background', '#000 url("img/car7t.png") no-repeat fixed');
@@ -85,22 +40,16 @@ var setHeights = function(){
 
 	$(window).scroll(function(){
 	  var scrollTop = $(window).scrollTop();
-	  
 	  if(scrollTop <= 1254){
-	  	
-	  	//$('body').css['background-image'] = "url('../img/car7t.png') !important";
 	  	$('body').css('background', '#000 url("img/car7t.png") no-repeat fixed');
 	  	$('body').css('backgroundSize','1750px');
-	  	//background.css("background-image", "url('img/car7t.png') !important");
 	  	
 	  }
 	  if(scrollTop > firstChange){
-	    
 	    $('body').css('background', '#000 url("img/car8t.png") no-repeat fixed');
 	  	$('body').css('backgroundSize','1750px');
 	  }
 	  if(scrollTop > secondChange){
-	    
 	    $('body').css('background', '#000 url("img/car4t.png") no-repeat fixed');
 	  	$('body').css('backgroundSize','1750px');
 	  }
@@ -109,12 +58,5 @@ var setHeights = function(){
 	    $('body').css('background', '#000 url("img/car6t.png") no-repeat fixed');
 	  	$('body').css('backgroundSize','1750px');
 	  }
-	  // if(scrollTop > 2975 && scrollTop <= 6000){
-	  //   console.log('showing image 3')
-	  // }
-	  // if(scrollTop > 6000){
-	  //   console.log('showing image 4')
-	  // }
-	  //$('#thediv').stop().animate({'max-height': maxHeight+"px"}, 500);
 	})
 }
