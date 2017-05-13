@@ -1,13 +1,7 @@
 
 
 /*General - theme*/
-#circle{
-	width:50%;
-	min-width:260px;
-	max-width: 500px;
-	margin:0 auto;
-	font-family: copper;
-}
+
 .width-control img {
     min-width:200px;
     width: 36%;
@@ -28,16 +22,7 @@
 .quarter-height{
 	height:32px;
 }
-.content{
-	font-family:SinkinSans;
-	color:#3a3a3a;
-}
-.subtext{
-    position: relative;
-    bottom: 16px;
-    font-family:SinkinSans;
-    margin-top:0;
-}
+
 
 /*Home - top section*/
 .background{
