@@ -1,22 +1,4 @@
-/*Whole Page - base*/
-@font-face {
-    font-family: copper;
-    src: url('../fonts/Copperplate Gothic Thirty-One AB.ttf');
-}
-@font-face {
-    font-family: SinkinSans;
-    src: url('../fonts/SinkinSans-400Regular.otf');
-}
-body{
-	text-align: center;
-	background:#FFFDD0;
-	color:#3f3f3f;
-	background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-h1{
-	line-height: 100px;
-}
+
 
 /*General - theme*/
 #circle{
