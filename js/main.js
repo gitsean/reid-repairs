@@ -1,7 +1,8 @@
 $( document ).ready(function() {
 
 	setHeights();
-
+	google.maps.event.addDomListener(window, 'load', initialize);
+	
 });
 
 /*GOOGLE MAPS*/
@@ -22,7 +23,7 @@ function initialize() {
 
 var pathname = window.location.pathname;
 
-google.maps.event.addDomListener(window, 'load', initialize);
+
 
 var setHeights = function(){
 
