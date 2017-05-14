@@ -397,8 +397,10 @@
 	</script>
 	<script>
 		document.getElementById('jquery').addEventListener('load', function () {
-			$('#circle').circleType({fitText:true, radius: 800});
-			$('#subtext').fitText(5, { minFontSize: '12px', maxFontSize: '24px' });
+			$( document ).ready(function() {
+				$('#circle').circleType({fitText:true, radius: 800});
+				$('#subtext').fitText(5, { minFontSize: '12px', maxFontSize: '24px' });
+			});
 			$('#confirmation').hide();
 		    $('#ss-form').submit(function(e) {
 		        e.preventDefault();
