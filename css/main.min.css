@@ -6,7 +6,7 @@
 .quarter-height{height:32px;}
 .background{background:#3f3f3f;color:#FFFDD0;text-align:center;margin-bottom:-10px;padding:16px 0 8px;}
 .social{margin:6px;display:inline-block;}
-.social icon{font-size:48px;}
+.social icon{font-size:48px !important;}
 .services{width:90%;margin:0 auto;}
 .service-list{margin-left:0;padding-right:36px;}
 .service-list li{width:46%;display:inline-block;min-width:240px;text-align:center;font-size:1.2em;background:#ffffff;margin:12px;padding:12px;border:2px solid #337ab7;color:#337ab7;}
