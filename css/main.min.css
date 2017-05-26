@@ -9,7 +9,7 @@
 .social icon{font-size:48px !important;}
 .services{width:90%;margin:0 auto;}
 .service-list{margin-left:0;padding-right:36px;}
-.service-list li{width:46%;display:inline-block;min-width:240px;text-align:center;font-size:1.2em;background:#ffffff;margin:12px;padding:12px;border:2px solid #337ab7;color:#337ab7;}
+.service-list li{width:46%;display:inline-block;min-width:160px;text-align:center;font-size:1.2em;background:#ffffff;margin:12px;padding:12px;border:2px solid #337ab7;color:#337ab7;}
 .about p{width:70%;min-width:125px;margin:0 auto;line-height:1.8em;}
 .the-team{margin-top:62px;}
 .card-deck{margin:48px 0;}

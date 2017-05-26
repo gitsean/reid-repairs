@@ -52,7 +52,7 @@
 .service-list li{
 	width: 46%;
 	display: inline-block;
-	min-width: 240px;
+	min-width: 160px;
 	text-align: center;
 	font-size: 1.2em;
 	background: #ffffff;
