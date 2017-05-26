@@ -369,71 +369,72 @@
 			</div>
 			<div class="quarter-height"></div>
 		</div>
-	</footer>
+		
 
-	<script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" async></script>
+		<script id="jquery" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" async></script>
 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-71607216-1', 'auto');
-	  ga('send', 'pageview');
-	</script>
+		  ga('create', 'UA-71607216-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
 
-	<script id="mapsJS" src="https://maps.googleapis.com/maps/api/js" async></script>
-	
-	<script><!-- lettering.js -->
-		document.getElementById('jquery').addEventListener('load', function () {
-		!function(a){function b(b,c,d,e){var f=b.text(),g=f.split(c),h="";g.length&&(a(g).each(function(a,b){h+='<span class="'+d+(a+1)+'" aria-hidden="true">'+b+"</span>"+e}),b.attr("aria-label",f).empty().append(h))}var c={init:function(){return this.each(function(){b(a(this),"","char","")})},words:function(){return this.each(function(){b(a(this)," ","word"," ")})},lines:function(){return this.each(function(){var c="eefec303079ad17405c889e092e105b0";b(a(this).children("br").replaceWith(c).end(),c,"line","")})}};a.fn.lettering=function(b){return b&&c[b]?c[b].apply(this,[].slice.call(arguments,1)):"letters"!==b&&b?(a.error("Method "+b+" does not exist on jQuery.lettering"),this):c.init.apply(this,[].slice.call(arguments,0))}}(jQuery);
-		})
-	</script>
-	<script><!-- fitText.js -->
-		document.getElementById('jquery').addEventListener('load', function () {
-		!function(a){a.fn.fitText=function(b,c){var d=b||1,e=a.extend({minFontSize:Number.NEGATIVE_INFINITY,maxFontSize:Number.POSITIVE_INFINITY},c);return this.each(function(){var b=a(this),c=function(){b.css("font-size",Math.max(Math.min(b.width()/(10*d),parseFloat(e.maxFontSize)),parseFloat(e.minFontSize)))};c(),a(window).on("resize.fittext orientationchange.fittext",c)})}}(jQuery);
-		})
-	</script>
-	<script> <!-- main.js -->
-		document.getElementById('jquery').addEventListener('load', function () {
-			function initialize(){var b=(document.getElementById("map"),{center:new google.maps.LatLng(40.177124,-75.106621),zoom:15,mapTypeId:google.maps.MapTypeId.ROADMAP}),c=new google.maps.Map(document.getElementById("map"),b);marker=new google.maps.Marker({map:c,position:new google.maps.LatLng(40.177124,-75.106621)}),infowindow=new google.maps.InfoWindow({content:"<strong>Reid Repairs</strong><br>2 South York Road<br>19040 Hatboro<br>"}),google.maps.event.addListener(marker,"click",function(){infowindow.open(c,marker)}),infowindow.open(c,marker)}$(document).ready(function(){setHeights(),initialize()});var pathname=window.location.pathname,setHeights=function(){$("body").css("background",'#000 url("img/car7t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px");var a=$("#inspection-area").offset().top,b=$("#ase-area").offset().top,c=$("#map-area").offset().top,d=$("#inspection-area").height(),e=a+d+75,f=b+d+75,g=c+d+75;$(window).scroll(function(){var a=$(window).scrollTop();a<=1254&&($("body").css("background",'#000 url("img/car7t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px")),a>e&&($("body").css("background",'#000 url("img/car8t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px")),a>f&&($("body").css("background",'#000 url("img/car4t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px")),a>g&&($("body").css("background",'#000 url("img/car6t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px"))})};
-		});
-			
-	</script>
-	<script><!-- circletype.js -->
-		document.getElementById('jquery').addEventListener('load', function () {
-		$.fn.circleType=function(a){var c={dir:1,position:"relative"};return"function"!=typeof $.fn.lettering?(console.log("Lettering.js is required"),void 0):this.each(function(){a&&$.extend(c,a);var h,i,b=this,d=180/Math.PI,e=parseInt($(b).css("font-size"),10),f=parseInt($(b).css("line-height"),10)||e,g=b.innerHTML.replace(/^\s+|\s+$/g,"").replace(/\s/g,"&nbsp;");b.innerHTML=g,$(b).lettering(),b.style.position=c.position,h=b.getElementsByTagName("span"),i=Math.floor(h.length/2);var j=function(){var g,j,k,m,n,o,p,q,a=0,i=0;for(g=0;g<h.length;g++)a+=h[g].offsetWidth;for(j=a/Math.PI/2+f,c.fluid&&!c.fitText?c.radius=Math.max(b.offsetWidth/2,j):c.radius||(c.radius=j),k=-1===c.dir?"center "+(-c.radius+f)/e+"em":"center "+c.radius/e+"em",m=c.radius-f,g=0;g<h.length;g++)n=h[g],i+=n.offsetWidth/2/m*d,n.rot=i,i+=n.offsetWidth/2/m*d;for(g=0;g<h.length;g++)n=h[g],o=n.style,p=-i*c.dir/2+n.rot*c.dir,q="rotate("+p+"deg)",o.position="absolute",o.left="50%",o.marginLeft=-(n.offsetWidth/2)/e+"em",o.webkitTransform=q,o.MozTransform=q,o.OTransform=q,o.msTransform=q,o.transform=q,o.webkitTransformOrigin=k,o.MozTransformOrigin=k,o.OTransformOrigin=k,o.msTransformOrigin=k,o.transformOrigin=k,-1===c.dir&&(o.bottom=0);c.fitText&&("function"!=typeof $.fn.fitText?console.log("FitText.js is required when using the fitText option"):($(b).fitText(),$(window).resize(function(){l()}))),l(),"function"==typeof c.callback&&c.callback.apply(b)},k=function(a){var b=document.documentElement,c=a.getBoundingClientRect();return{top:c.top+window.pageYOffset-b.clientTop,left:c.left+window.pageXOffset-b.clientLeft,height:c.height}},l=function(){var d,a=k(h[i]),c=k(h[0]);d=a.top<c.top?c.top-a.top+c.height:a.top-c.top+c.height,b.style.height=d+"px"};c.fluid&&!c.fitText&&$(window).resize(function(){j()}),"complete"!==document.readyState?(b.style.visibility="hidden",$(window).load(function(){b.style.visibility="visible",j()})):j()})};
-		});
-	</script>
-	<script>
-		document.getElementById('jquery').addEventListener('load', function () {
-			$( document ).ready(function() {
-				$('#circle').circleType({fitText:true, radius: 800});
-				$('#subtext').fitText(5, { minFontSize: '12px', maxFontSize: '24px' });
+		<script id="mapsJS" src="https://maps.googleapis.com/maps/api/js" async></script>
+		
+		<script><!-- lettering.js -->
+			document.getElementById('jquery').addEventListener('load', function () {
+			!function(a){function b(b,c,d,e){var f=b.text(),g=f.split(c),h="";g.length&&(a(g).each(function(a,b){h+='<span class="'+d+(a+1)+'" aria-hidden="true">'+b+"</span>"+e}),b.attr("aria-label",f).empty().append(h))}var c={init:function(){return this.each(function(){b(a(this),"","char","")})},words:function(){return this.each(function(){b(a(this)," ","word"," ")})},lines:function(){return this.each(function(){var c="eefec303079ad17405c889e092e105b0";b(a(this).children("br").replaceWith(c).end(),c,"line","")})}};a.fn.lettering=function(b){return b&&c[b]?c[b].apply(this,[].slice.call(arguments,1)):"letters"!==b&&b?(a.error("Method "+b+" does not exist on jQuery.lettering"),this):c.init.apply(this,[].slice.call(arguments,0))}}(jQuery);
+			})
+		</script>
+		<script><!-- fitText.js -->
+			document.getElementById('jquery').addEventListener('load', function () {
+			!function(a){a.fn.fitText=function(b,c){var d=b||1,e=a.extend({minFontSize:Number.NEGATIVE_INFINITY,maxFontSize:Number.POSITIVE_INFINITY},c);return this.each(function(){var b=a(this),c=function(){b.css("font-size",Math.max(Math.min(b.width()/(10*d),parseFloat(e.maxFontSize)),parseFloat(e.minFontSize)))};c(),a(window).on("resize.fittext orientationchange.fittext",c)})}}(jQuery);
+			})
+		</script>
+		<script> <!-- main.js -->
+			document.getElementById('jquery').addEventListener('load', function () {
+				function initialize(){var b=(document.getElementById("map"),{center:new google.maps.LatLng(40.177124,-75.106621),zoom:15,mapTypeId:google.maps.MapTypeId.ROADMAP}),c=new google.maps.Map(document.getElementById("map"),b);marker=new google.maps.Marker({map:c,position:new google.maps.LatLng(40.177124,-75.106621)}),infowindow=new google.maps.InfoWindow({content:"<strong>Reid Repairs</strong><br>2 South York Road<br>19040 Hatboro<br>"}),google.maps.event.addListener(marker,"click",function(){infowindow.open(c,marker)}),infowindow.open(c,marker)}$(document).ready(function(){setHeights(),initialize()});var pathname=window.location.pathname,setHeights=function(){$("body").css("background",'#000 url("img/car7t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px");var a=$("#inspection-area").offset().top,b=$("#ase-area").offset().top,c=$("#map-area").offset().top,d=$("#inspection-area").height(),e=a+d+75,f=b+d+75,g=c+d+75;$(window).scroll(function(){var a=$(window).scrollTop();a<=1254&&($("body").css("background",'#000 url("img/car7t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px")),a>e&&($("body").css("background",'#000 url("img/car8t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px")),a>f&&($("body").css("background",'#000 url("img/car4t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px")),a>g&&($("body").css("background",'#000 url("img/car6t.png") no-repeat fixed'),$("body").css("backgroundSize","1750px"))})};
 			});
-			$('#confirmation').hide();
-		    $('#ss-form').submit(function(e) {
-		        e.preventDefault();
-		        $.ajax({
-		            url: "https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse",
-		            data: $(this).serialize(),
-		            type: "POST",
-		            dataType: "xml",
-		            success: function(data) {
-		                $('#confirmation').show();
-		                $('#ss-form').hide();
+				
+		</script>
+		<script><!-- circletype.js -->
+			document.getElementById('jquery').addEventListener('load', function () {
+			$.fn.circleType=function(a){var c={dir:1,position:"relative"};return"function"!=typeof $.fn.lettering?(console.log("Lettering.js is required"),void 0):this.each(function(){a&&$.extend(c,a);var h,i,b=this,d=180/Math.PI,e=parseInt($(b).css("font-size"),10),f=parseInt($(b).css("line-height"),10)||e,g=b.innerHTML.replace(/^\s+|\s+$/g,"").replace(/\s/g,"&nbsp;");b.innerHTML=g,$(b).lettering(),b.style.position=c.position,h=b.getElementsByTagName("span"),i=Math.floor(h.length/2);var j=function(){var g,j,k,m,n,o,p,q,a=0,i=0;for(g=0;g<h.length;g++)a+=h[g].offsetWidth;for(j=a/Math.PI/2+f,c.fluid&&!c.fitText?c.radius=Math.max(b.offsetWidth/2,j):c.radius||(c.radius=j),k=-1===c.dir?"center "+(-c.radius+f)/e+"em":"center "+c.radius/e+"em",m=c.radius-f,g=0;g<h.length;g++)n=h[g],i+=n.offsetWidth/2/m*d,n.rot=i,i+=n.offsetWidth/2/m*d;for(g=0;g<h.length;g++)n=h[g],o=n.style,p=-i*c.dir/2+n.rot*c.dir,q="rotate("+p+"deg)",o.position="absolute",o.left="50%",o.marginLeft=-(n.offsetWidth/2)/e+"em",o.webkitTransform=q,o.MozTransform=q,o.OTransform=q,o.msTransform=q,o.transform=q,o.webkitTransformOrigin=k,o.MozTransformOrigin=k,o.OTransformOrigin=k,o.msTransformOrigin=k,o.transformOrigin=k,-1===c.dir&&(o.bottom=0);c.fitText&&("function"!=typeof $.fn.fitText?console.log("FitText.js is required when using the fitText option"):($(b).fitText(),$(window).resize(function(){l()}))),l(),"function"==typeof c.callback&&c.callback.apply(b)},k=function(a){var b=document.documentElement,c=a.getBoundingClientRect();return{top:c.top+window.pageYOffset-b.clientTop,left:c.left+window.pageXOffset-b.clientLeft,height:c.height}},l=function(){var d,a=k(h[i]),c=k(h[0]);d=a.top<c.top?c.top-a.top+c.height:a.top-c.top+c.height,b.style.height=d+"px"};c.fluid&&!c.fitText&&$(window).resize(function(){j()}),"complete"!==document.readyState?(b.style.visibility="hidden",$(window).load(function(){b.style.visibility="visible",j()})):j()})};
+			});
+		</script>
+		<script>
+			document.getElementById('jquery').addEventListener('load', function () {
+				$( document ).ready(function() {
+					$('#circle').circleType({fitText:true, radius: 800});
+					$('#subtext').fitText(5, { minFontSize: '12px', maxFontSize: '24px' });
+				});
+				$('#confirmation').hide();
+			    $('#ss-form').submit(function(e) {
+			        e.preventDefault();
+			        $.ajax({
+			            url: "https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse",
+			            data: $(this).serialize(),
+			            type: "POST",
+			            dataType: "xml",
+			            success: function(data) {
+			                $('#confirmation').show();
+			                $('#ss-form').hide();
 
-		            },
-		            error: function(xhr, status, error) {
-		                $('#confirmation').show();
-		                $('#ss-form').hide();
-		            }
-		        });
-		    });
-		});
-	</script>
+			            },
+			            error: function(xhr, status, error) {
+			                $('#confirmation').show();
+			                $('#ss-form').hide();
+			            }
+			        });
+			    });
+			});
+		</script>
 
-	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+		<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+	</footer>
 
 </html>
