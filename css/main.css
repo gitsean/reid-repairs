@@ -36,7 +36,7 @@
     margin: 6px;
     display: inline-block;
 }
-.social icon{
+.social span{
 	font-size:48px !important;
 }
 
@@ -90,8 +90,8 @@
 	margin-top: 24px;
 }
 
-/*General Info (Icons) Section*/
-#general-info icon{
+/*General Info (spans) Section*/
+#general-info span{
 	background: white;
 	padding: 12px;
 	border-radius: 8px;
