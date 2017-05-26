@@ -78,7 +78,7 @@
 .card{
 	width:30%;
 	display:inline-block;
-	min-width:320px;
+	min-width:300px;
 	vertical-align: top;
 	margin-bottom:24px;
 }
@@ -172,7 +172,7 @@
 .end-of-page .section{
 	width: 46%;
 	display: inline-block;
-	min-width: 320px;
+	min-width: 300px;
 	text-align: center;
 	margin: 12px;
 	padding: 12px;
