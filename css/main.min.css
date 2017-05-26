@@ -13,7 +13,7 @@
 .about p{width:70%;min-width:125px;margin:0 auto;line-height:1.8em;}
 .the-team{margin-top:62px;}
 .card-deck{margin:48px 0;}
-.card{width:30%;display:inline-block;min-width:300px;vertical-align:top;margin-bottom:24px;}
+.card{width:30%;display:inline-block;min-width:275px;vertical-align:top;margin-bottom:24px;}
 .card img{max-height:225px;margin:0 auto;}
 .card-block{margin-top:24px;}
 #general-info icon{background:white;padding:12px;border-radius:8px;}
@@ -36,7 +36,7 @@
 .btn-primary:focus,
 .btn-primary:active:focus{color:#FFFDD0;background-color:#ccc;border-color:#ccc;}
 .end-of-page img{max-width:80%;}
-.end-of-page .section{width:46%;display:inline-block;min-width:280px;text-align:center;margin:12px;padding:12px;border:2px solid #3f3f3f;background:#FFFDD0;color:#3f3f3f;}
+.end-of-page .section{width:46%;display:inline-block;min-width:250px;text-align:center;margin:12px;padding:12px;border:2px solid #3f3f3f;background:#FFFDD0;color:#3f3f3f;}
 .spacer{margin:0 8px;}
 @media (min-width:767px){body{background-size:1600px !important;}
 .navbar{border-radius:0;}
@@ -46,5 +46,5 @@
 .mid-page{padding:12px;}
 .about p{width:90%;}
 #map{width:350px;height:350px;margin:0 auto;}}
-@media (min-width:1600px){body{background-size:2200px !important;}}
-@media (max-width: 320px){#map {width: 300px;height: 300px;}}
+@media (min-width:1600px){body{background-size:2200px !important;}#map {width: 60%;height: 280px;}}
+@media (max-width: 320px){#map {width: 280px;height: 280px;}}

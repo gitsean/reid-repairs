@@ -78,7 +78,7 @@
 .card{
 	width:30%;
 	display:inline-block;
-	min-width:300px;
+	min-width:275px;
 	vertical-align: top;
 	margin-bottom:24px;
 }
@@ -172,7 +172,7 @@
 .end-of-page .section{
 	width: 46%;
 	display: inline-block;
-	min-width: 280px;
+	min-width: 250px;
 	text-align: center;
 	margin: 12px;
 	padding: 12px;
@@ -226,6 +226,10 @@
 @media (min-width: 1600px){
 	body {
     	background-size:2200px !important;
+	}
+	#map {
+		width: 60%;
+		height: 300px;
 	}
 }
 @media (max-width: 320px){
