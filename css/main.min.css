@@ -36,7 +36,7 @@
 .btn-primary:focus,
 .btn-primary:active:focus{color:#FFFDD0;background-color:#ccc;border-color:#ccc;}
 .end-of-page img{max-width:80%;}
-.end-of-page .section{width:46%;display:inline-block;min-width:300px;text-align:center;margin:12px;padding:12px;border:2px solid #3f3f3f;background:#FFFDD0;color:#3f3f3f;}
+.end-of-page .section{width:46%;display:inline-block;min-width:280px;text-align:center;margin:12px;padding:12px;border:2px solid #3f3f3f;background:#FFFDD0;color:#3f3f3f;}
 .spacer{margin:0 8px;}
 @media (min-width:767px){body{background-size:1600px !important;}
 .navbar{border-radius:0;}
