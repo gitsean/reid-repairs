@@ -40,13 +40,11 @@
 .spacer{margin:0 8px;}
 @media (min-width:767px){body{background-size:1600px !important;}
 .navbar{border-radius:0;}
-#myNavbar{width:400px;margin:0 auto;}
-}
+#myNavbar{width:400px;margin:0 auto;}}
 @media (max-width:767px){body{background-size:1600px !important;}
 #home{background-position-x:-100px !important;}
 .mid-page{padding:12px;}
 .about p{width:90%;}
-#map{width:350px;height:350px;margin:0 auto;}
-}
-@media (min-width:1600px){body{background-size:2200px !important;}
-}
+#map{width:350px;height:350px;margin:0 auto;}}
+@media (min-width:1600px){body{background-size:2200px !important;}}
+@media (min-width: 320px){#map {width: 300px;height: 300px;}}
