@@ -36,10 +36,9 @@
     margin: 6px;
     display: inline-block;
 }
-.social span{
+.social icon{
 	font-size:48px !important;
 }
-.fa{font-size:48px !important;}
 
 /*Services Section*/
 .services{
@@ -92,7 +91,7 @@
 }
 
 /*General Info (Icons) Section*/
-#general-info span{
+#general-info icon{
 	background: white;
 	padding: 12px;
 	border-radius: 8px;
