@@ -47,4 +47,4 @@
 .about p{width:90%;}
 #map{width:350px;height:350px;margin:0 auto;}}
 @media (min-width:1600px){body{background-size:2200px !important;}#map {width: 60%;height: 280px;}}
-@media (max-width: 320px){#map {width: 280px;height: 280px;}}
+@media (max-width: 380px){#map {width: 280px;height: 280px;}}
