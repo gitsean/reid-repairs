@@ -166,7 +166,8 @@
 }
 
 .company-booking-links__link,
-.company-booking-links__link:hover {
+.company-booking-links__link:hover,
+.company-booking-links__link:focus {
   background: rgb(51, 122, 183);
   color: #fffdd0;
   font-weight: bold;
