@@ -439,6 +439,17 @@
             id="inputDescription"
             placeholder="Reason for Visit"
           ></textarea>
+          <div class="form-group">
+            <label class="sr-only" for="answerTest">What is 1 + 1?</label>
+            <input
+              name="testAnswer"
+              required
+              type="text"
+              class="form-control"
+              id="answerTest"
+              placeholder="What is 1 + 1?"
+            />
+          </div>
         </div>
 
         <!--
@@ -756,10 +767,19 @@
         $("#confirmation").hide();
         $("#ss-form").submit(function(e) {
           e.preventDefault();
+          const formData = $(this).serialize();
+          const testAnswer = jQuery('input[name="testAnswer"]').val();
+
+          if (testAnswer !== 2 && testAnswer !== "two") {
+            $("#confirmation").show();
+            $("#ss-form").hide();
+            return;
+          }
+
           $.ajax({
             url:
               "https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse",
-            data: $(this).serialize(),
+            data: formData,
             type: "POST",
             dataType: "xml",
             success: function(data) {
@@ -776,12 +796,12 @@
     </script>
     <script>
       // document.getElementById("jquery").addEventListener("load", function() {
-      lettering();
 
-      fitText();
-      loadCircleType();
       loadMap();
       $(document).ready(function() {
+        lettering();
+        fitText();
+        loadCircleType();
         setHeights();
         map.resize();
         // , initialize();
