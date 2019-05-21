@@ -389,14 +389,7 @@
         Have a question for the a certified mechanic? Feel free to fill out this
         form:
       </p>
-      <form
-        action="https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse"
-        method="POST"
-        id="ss-form"
-        target="_self"
-        onsubmit=""
-        class="form-group"
-      >
+      <form id="ss-form" class="form-group">
         <div class="form-group">
           <label class="sr-only" for="inputName">Name</label>
           <input
@@ -519,7 +512,6 @@
           .setLngLat([-75.10661, 40.177346])
           .addTo(map);
       }
-      // lettering.js
       function lettering() {
         !(function(a) {
           function b(b, c, d, e) {
@@ -578,7 +570,6 @@
           };
         })(jQuery);
       }
-      // < !--fitText.js -->
       function fitText() {
         !(function(a) {
           a.fn.fitText = function(b, c) {
@@ -767,26 +758,21 @@
         $("#confirmation").hide();
         $("#ss-form").submit(function(e) {
           e.preventDefault();
-          const formData = $(this).serialize();
-          const testAnswer = jQuery('input[name="testAnswer"]').val();
 
-          if (testAnswer !== 2 && testAnswer !== "two") {
-            $("#confirmation").show();
-            $("#ss-form").hide();
-            return;
-          }
+          const formData = JSON.stringify($("#ss-form").serializeArray());
 
           $.ajax({
-            url:
-              "https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse",
+            url: "http://localhost:3000/form/",
             data: formData,
             type: "POST",
-            dataType: "xml",
+            dataType: "json",
+            contentType: "application/json",
             success: function(data) {
               $("#confirmation").show();
               $("#ss-form").hide();
             },
             error: function(xhr, status, error) {
+              console.log("oops. There was error. ", xhr, status, error);
               $("#confirmation").show();
               $("#ss-form").hide();
             }
@@ -795,10 +781,9 @@
       }
     </script>
     <script>
-      // document.getElementById("jquery").addEventListener("load", function() {
-
-      loadMap();
-      $(document).ready(function() {
+      function runall() {
+        loadMap();
+        // $(document).ready(function() {
         lettering();
         fitText();
         loadCircleType();
@@ -809,10 +794,16 @@
           minFontSize: "12px",
           maxFontSize: "24px"
         });
-      });
-      var pathname = window.location.pathname;
-      // });
-      customFormJS();
+        // });
+        var pathname = window.location.pathname;
+        customFormJS();
+      }
+      // document.getElementById("jquery").addEventListener("load",
+
+      if (!!window.addEventListener)
+        window.addEventListener("DOMContentLoaded", runall);
+      // MSIE
+      else window.attachEvent("onload", runall);
     </script>
 
     <script>
