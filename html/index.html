@@ -772,7 +772,7 @@
               $("#ss-form").hide();
             },
             error: function(xhr, status, error) {
-              console.log("oops. There was error. ", xhr, status, error);
+              console.log("oops. There was error here. ", xhr, status, error);
               $("#confirmation").show();
               $("#ss-form").hide();
             }
@@ -800,8 +800,7 @@
       }
       // document.getElementById("jquery").addEventListener("load",
 
-      if (!!window.addEventListener)
-        window.addEventListener("DOMContentLoaded", runall);
+      if (!!window.addEventListener) window.addEventListener("load", runall);
       // MSIE
       else window.attachEvent("onload", runall);
     </script>
