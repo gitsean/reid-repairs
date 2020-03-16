@@ -218,6 +218,9 @@
   .about p {
     width: 90%;
   }
+  #notification-text {
+    font-size: 12px !important;
+  }
   /* #map {
     width: 350px;
     height: 350px;
