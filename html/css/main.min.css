@@ -204,6 +204,9 @@
     width: 400px;
     margin: 0 auto;
   }
+  #notification-text {
+    font-size: 18px;
+  }
 }
 @media (max-width: 767px) {
   body {
@@ -219,7 +222,7 @@
     width: 90%;
   }
   #notification-text {
-    font-size: 12px !important;
+    font-size: 12px;
   }
   /* #map {
     width: 350px;
