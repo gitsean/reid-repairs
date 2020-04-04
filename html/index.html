@@ -69,7 +69,7 @@
       />
     </noscript>
     <script>
-      var loadDeferredStyles = function() {
+      var loadDeferredStyles = function () {
         var addStylesNode = document.getElementById("deferred-styles");
         var replacement = document.createElement("div");
         replacement.innerHTML = addStylesNode.textContent;
@@ -82,7 +82,7 @@
         webkitRequestAnimationFrame ||
         msRequestAnimationFrame;
       if (raf)
-        raf(function() {
+        raf(function () {
           window.setTimeout(loadDeferredStyles, 0);
         });
       else window.addEventListener("load", loadDeferredStyles);
@@ -151,9 +151,9 @@
         <div class="front top-page">
           <div
             class="quarter-height"
-            style="height: 40px;background-color: #ec7063;"
+            style="height: 40px; background-color: #ec7063;"
           >
-            <span id="notification-text" style="position: relative;top: 10px"
+            <span id="notification-text" style="position: relative; top: 10px;"
               >We are open during normal business hours</span
             >
           </div>
@@ -304,7 +304,7 @@
           <div class="card">
             <img
               class="card-img-top img-circle"
-              src="img/ross3.jpg"
+              src="img/ross3L.jpg"
               alt="Ross Sadler"
             />
             <div class="card-block">
@@ -384,7 +384,7 @@
     <div class="transparent width-control">
       <div class="height"></div>
 
-      <div style="height:120px;" class="uhaul-image">
+      <div style="height: 120px;" class="uhaul-image">
         <!-- <img src="img/uhaullogo.png" alt="Uhaul Rental" > -->
       </div>
       <div class="height"></div>
@@ -513,20 +513,20 @@
           container: "map", // container id
           style: "mapbox://styles/mapbox/streets-v9", // stylesheet location
           center: [-75.10661, 40.177346], // starting position [lng, lat]
-          zoom: 12 // starting zoom
+          zoom: 12, // starting zoom
         });
         var marker = new mapboxgl.Marker()
           .setLngLat([-75.10661, 40.177346])
           .addTo(map);
       }
       function lettering() {
-        !(function(a) {
+        !(function (a) {
           function b(b, c, d, e) {
             var f = b.text(),
               g = f.split(c),
               h = "";
             g.length &&
-              (a(g).each(function(a, b) {
+              (a(g).each(function (a, b) {
                 h +=
                   '<span class="' +
                   d +
@@ -536,38 +536,27 @@
                   "</span>" +
                   e;
               }),
-              b
-                .attr("aria-label", f)
-                .empty()
-                .append(h));
+              b.attr("aria-label", f).empty().append(h));
           }
           var c = {
-            init: function() {
-              return this.each(function() {
+            init: function () {
+              return this.each(function () {
                 b(a(this), "", "char", "");
               });
             },
-            words: function() {
-              return this.each(function() {
+            words: function () {
+              return this.each(function () {
                 b(a(this), " ", "word", " ");
               });
             },
-            lines: function() {
-              return this.each(function() {
+            lines: function () {
+              return this.each(function () {
                 var c = "eefec303079ad17405c889e092e105b0";
-                b(
-                  a(this)
-                    .children("br")
-                    .replaceWith(c)
-                    .end(),
-                  c,
-                  "line",
-                  ""
-                );
+                b(a(this).children("br").replaceWith(c).end(), c, "line", "");
               });
-            }
+            },
           };
-          a.fn.lettering = function(b) {
+          a.fn.lettering = function (b) {
             return b && c[b]
               ? c[b].apply(this, [].slice.call(arguments, 1))
               : "letters" !== b && b
@@ -578,19 +567,19 @@
         })(jQuery);
       }
       function fitText() {
-        !(function(a) {
-          a.fn.fitText = function(b, c) {
+        !(function (a) {
+          a.fn.fitText = function (b, c) {
             var d = b || 1,
               e = a.extend(
                 {
                   minFontSize: Number.NEGATIVE_INFINITY,
-                  maxFontSize: Number.POSITIVE_INFINITY
+                  maxFontSize: Number.POSITIVE_INFINITY,
                 },
                 c
               );
-            return this.each(function() {
+            return this.each(function () {
               var b = a(this),
-                c = function() {
+                c = function () {
                   b.css(
                     "font-size",
                     Math.max(
@@ -605,11 +594,11 @@
         })(jQuery);
       }
       function loadCircleType() {
-        $.fn.circleType = function(a) {
+        $.fn.circleType = function (a) {
           var c = { dir: 1, position: "relative" };
           return "function" != typeof $.fn.lettering
             ? (console.log("Lettering.js is required"), void 0)
-            : this.each(function() {
+            : this.each(function () {
                 a && $.extend(c, a);
                 var h,
                   i,
@@ -625,7 +614,7 @@
                   (b.style.position = c.position),
                   (h = b.getElementsByTagName("span")),
                   (i = Math.floor(h.length / 2));
-                var j = function() {
+                var j = function () {
                     var g,
                       j,
                       k,
@@ -680,22 +669,22 @@
                             "FitText.js is required when using the fitText option"
                           )
                         : ($(b).fitText(),
-                          $(window).resize(function() {
+                          $(window).resize(function () {
                             l();
                           }))),
                       l(),
                       "function" == typeof c.callback && c.callback.apply(b);
                   },
-                  k = function(a) {
+                  k = function (a) {
                     var b = document.documentElement,
                       c = a.getBoundingClientRect();
                     return {
                       top: c.top + window.pageYOffset - b.clientTop,
                       left: c.left + window.pageXOffset - b.clientLeft,
-                      height: c.height
+                      height: c.height,
                     };
                   },
-                  l = function() {
+                  l = function () {
                     var d,
                       a = k(h[i]),
                       c = k(h[0]);
@@ -707,12 +696,12 @@
                   };
                 c.fluid &&
                   !c.fitText &&
-                  $(window).resize(function() {
+                  $(window).resize(function () {
                     j();
                   }),
                   "complete" !== document.readyState
                     ? ((b.style.visibility = "hidden"),
-                      $(window).load(function() {
+                      $(window).load(function () {
                         (b.style.visibility = "visible"), j();
                       }))
                     : j();
@@ -733,7 +722,7 @@
           e = a + d + 75,
           f = b + d + 75,
           g = c + d + 75;
-        $(window).scroll(function() {
+        $(window).scroll(function () {
           var a = $(window).scrollTop();
           a > 1250 &&
             ($("body").css(
@@ -763,7 +752,7 @@
       }
       function customFormJS() {
         $("#confirmation").hide();
-        $("#ss-form").submit(function(e) {
+        $("#ss-form").submit(function (e) {
           e.preventDefault();
 
           const formData = JSON.stringify($("#ss-form").serializeArray());
@@ -774,15 +763,15 @@
             type: "POST",
             dataType: "json",
             contentType: "application/json",
-            success: function(data) {
+            success: function (data) {
               $("#confirmation").show();
               $("#ss-form").hide();
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
               console.log("oops. There was error here. ", xhr, status, error);
               $("#confirmation").show();
               $("#ss-form").hide();
-            }
+            },
           });
         });
       }
@@ -799,7 +788,7 @@
         // , initialize();
         $("#subtext").fitText(5, {
           minFontSize: "12px",
-          maxFontSize: "24px"
+          maxFontSize: "24px",
         });
         // });
         var pathname = window.location.pathname;
@@ -813,11 +802,11 @@
     </script>
 
     <script>
-      (function(i, s, o, g, r, a, m) {
+      (function (i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
         (i[r] =
           i[r] ||
-          function() {
+          function () {
             (i[r].q = i[r].q || []).push(arguments);
           }),
           (i[r].l = 1 * new Date());
