@@ -1,3 +1,10 @@
+table {
+  margin: 0px auto;
+  text-align: left;
+}
+td {
+  padding: 4px 20px 4px 26px;
+}
 .width-control img {
   min-width: 200px;
   width: 36%;
