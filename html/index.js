@@ -5,15 +5,15 @@ const request = require("request");
 const path = require("path");
 const cors = require("cors");
 
-app.use("*", function (req, res, next) {
-  //replace localhost:8080 to the ip address:port of your server
-  res.header("Access-Control-Allow-Origin", "https://reidrepairs.com:80");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Access-Control-Allow-Headers", "Accept");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-});
+// app.use("*", function (req, res, next) {
+//   //replace localhost:8080 to the ip address:port of your server
+//   res.header("Access-Control-Allow-Origin", "https://reidrepairs.com:80");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//   res.header("Access-Control-Allow-Headers", "Content-Type");
+//   res.header("Access-Control-Allow-Headers", "Accept");
+//   res.header("Access-Control-Allow-Credentials", true);
+//   next();
+// });
 
 //enable pre-flight
 app.options("*", cors());
