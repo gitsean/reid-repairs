@@ -35,9 +35,6 @@ app.post("/form/", function (req, res) {
     .map((key) => `${key}=${params[key]}`)
     .join("&");
 
-  // print query string
-  console.log(`http://example.com?${qs}`);
-
   const requestUrl = `${formUrl}?${qs}`;
   console.log(requestUrl);
   request.post(requestUrl, null, (error, r, body) => {
