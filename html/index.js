@@ -3,18 +3,31 @@ const app = express();
 const bodyParser = require("body-parser");
 const request = require("request");
 const path = require("path");
+const cors = require("cors");
+
+app.use("*", function (req, res, next) {
+  //replace localhost:8080 to the ip address:port of your server
+  res.header("Access-Control-Allow-Origin", "http://127.0.0.1:80");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
+
+//enable pre-flight
+app.options("*", cors());
 
 app.use(bodyParser.json());
 
 // Uncomment for local testing
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 const formUrl =
   "https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse";
