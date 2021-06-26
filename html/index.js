@@ -7,7 +7,7 @@ const path = require("path");
 app.use(bodyParser.json());
 
 // Uncomment for local testing
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -19,22 +19,27 @@ app.use(function(req, res, next) {
 const formUrl =
   "https://docs.google.com/a/reidrepairs.com/forms/d/1qdhCt3fDuoNEPx3uhPz4wSh8TL3mUCzcgcm6BQWjRTg/formResponse";
 
-app.post("/form/", function(req, res) {
+app.post("/form/", function (req, res) {
   console.log("form post received on node.");
-  const testValueCheck = req.body.find(item => item.name === "testAnswer")
-    .value;
-  if (testValueCheck !== "2" || testValueCheck !== "two") {
+  let params = req.body;
+  console.log(params);
+  const testValueCheck = params["testAnswer"];
+  if (testValueCheck != 2 && testValueCheck !== "two") {
     res.send("Ok");
     return;
   }
   console.log("value check is ok.");
-  const googleString = req.body.reduce((str, item, idx) => {
-    const char = idx === 0 ? "?" : "&";
-    return (str +=
-      item.name === "testAnswer" ? "" : `${char}${item.name}=${item.value}`);
-  }, "");
+  // convert objec to a query string
 
-  const requestUrl = `${formUrl}${googleString}`;
+  const qs = Object.keys(params)
+    .map((key) => `${key}=${params[key]}`)
+    .join("&");
+
+  // print query string
+  console.log(`http://example.com?${qs}`);
+
+  const requestUrl = `${formUrl}?${qs}`;
+  console.log(requestUrl);
   request.post(requestUrl, null, (error, r, body) => {
     console.log("sending to google form.");
     if (error) {
