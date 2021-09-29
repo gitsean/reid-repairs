@@ -7,17 +7,19 @@ const cors = require("cors");
 
 app.use("*", function (req, res, next) {
   //replace localhost:8080 to the ip address:port of your server
-  res.header("Access-Control-Allow-Origin", "https://reidrepairs.com*");
+  res.header("Access-Control-Allow-Origin", "https://reidrepairs.com");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header("Access-Control-Allow-Headers", "Content-Type");
   res.header("Access-Control-Allow-Headers", "Accept");
+  res.header("Access-Control-Allow-Methods", "OPTIONS");
+  res.header("Access-Control-Allow-Methods", "POST");
   res.header("Access-Control-Allow-Credentials", true);
   next();
 });
 
 //enable pre-flight
-app.options("*", cors());
-
+// app.options("*", cors());
+app.use(cors());
 app.use(bodyParser.json());
 
 // Uncomment for local testing
