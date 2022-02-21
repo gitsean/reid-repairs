@@ -222,10 +222,10 @@
   .about p {
     width: 90%;
   }
-  #notification-text {
+  /* #notification-text {
     font-size: 14px;
     font-weight: bold;
-  }
+  } */
   /* #map {
     width: 350px;
     height: 350px;
